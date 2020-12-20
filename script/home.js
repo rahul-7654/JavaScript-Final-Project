@@ -173,8 +173,7 @@ $(document).ready(function() {
     function saveUserResults(total) {
         var users = localStorage.getItem('Users');
         users = JSON.parse(users);
-        var index = users.findIndex(u => u.emai == loggedInUser.email);
-
+        var index = users.findIndex(u => u.email == loggedInUser.email);
         
         users[index].grading.push({
             grade: total,
@@ -183,6 +182,5 @@ $(document).ready(function() {
         })
 
         localStorage.setItem('Users', JSON.stringify(users));
-
     }
 })
