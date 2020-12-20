@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="./script/home.js"></script>
+    <link href='./css/style.css' rel="stylesheet">
+</head>
+
+<body>
+    <header></header>
+    
+    <nav class="topnav">
+        <div class="topnav-right">
+            <a href="#">Grades</a>
+            <a href="#" id='logout'>Sign Out</a>
+          </div>
+    </nav>
+    
+    <main class='quizWrapper'>
+        <h1></h1>
+        <label for='categories'>Select Category</label>
+        <select name="categories" id="categories">
+            <option value='any'>Any</option>
+            <option value='9'>General Knowledge</option>
+            <option value='10'>Entertain: Books</option>
+            <option value='11'>Entertain: Film</option>
+            <option value='12'>Entertain: Music</option>
+            <option value='13'>Entertain: Musicals & Theatre</option>
+            <option value='14'>Entertain: Television</option>
+            <option value='15'>Entertain: Video Games</option>
+            <option value='16'>Entertain: Board Games</option>
+            <option value='17'>Science & Nature</option>
+            <option value='18'>Science: Computers</option>
+            <option value='19'>Science: Mathematics</option>
+            <option value='20'>Mythology</option>
+            <option value='21'>Sports</option>
+            <option value='22'>Geography</option>
+            <option value='23'>History</option>
+            <option value='24'>Politics</option>
+            <option value="25">Arts</option>
+            <option value="26">Celeberties</option>
+            <option value="27">Animals</option>
+            <option value="28">Vehicals</option>
+            <option value="30">Science Gadgets</option>
+        </select>
+
+        <label for='difficulty'>Select Difficulty Level</label>
+        <select name="difficulty" id="difficulty">
+            <option value='any'>Any</option>
+            <option value='easy'>Easy</option>
+            <option value='medium'>Medium</option>
+            <option value='hard'>Hard</option>
+        </select>
+        
+        <input type='button' id='start' value='Begin Quiz'>
+        <div id='loader' class='center'></div>
+        <div id='quiz'></div>
+        <div id='result'></div>
+        <input type='button' id='submitQuiz' value='Submit Quiz'>
+    </main>
+    
+    <footer></footer>
+</body>
+</html>

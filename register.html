@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Register</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="./script/auth.js"></script>
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <main class="wrapper fadeInDown">
+        
+        <div id="formContent">
+            <h2 class="active">Sign Up</h2>
+            <form  action="#" id="signupForm">
+                <input 
+                    type="text" 
+                    id="fName" 
+                    class="fadeIn second textInput" 
+                    name="fName" 
+                    placeholder="Firstname">
+
+                <input 
+                    type="text" 
+                    id="lName" 
+                    class="fadeIn second textInput" 
+                    name="lName" 
+                    placeholder="Lastname">
+
+                <input 
+                    type="text" 
+                    id="signupEmail" 
+                    class="fadeIn second textInput" 
+                    name="signupEmail" 
+                    placeholder="Email">
+
+                <input 
+                    type="password" 
+                    id="signupPwd" 
+                    class="fadeIn second textInput" 
+                    name="signupPwd" 
+                    placeholder="Password">
+    
+                <input type="submit" value="Sign Up">
+            </form>
+
+            <div id="formFooter">
+                <span class='errorMessage'></span><br>
+                Already have account? <a class="underlineHover" href="./index.html">Sign In</a>
+            </div>
+        </div>
+        
+    </main>
+    
+    <footer></footer>
+</body>
+</html>
