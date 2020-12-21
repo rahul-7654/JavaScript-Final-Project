@@ -77,7 +77,7 @@ $(document).ready(function() {
                 // finally save updated array to local storage
                 localStorage.setItem('Users', JSON.stringify(users));
 
-                sessionStorage.setItem(SESSION_KEY, JSON.stringify(newUser));
+                sessionStorage.setItem(SESSION_KEY, JSON.stringify({email, firstName, lastName}));
                 location.href = './home.html';
             }
                         

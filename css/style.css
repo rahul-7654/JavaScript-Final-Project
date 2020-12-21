@@ -338,3 +338,13 @@ input[type=text]:placeholder {
 #result span {
   color: #56baed;
 }
+
+table {
+  width: 60%;
+}
+table thead {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}

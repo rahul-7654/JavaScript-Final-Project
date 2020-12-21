@@ -2,45 +2,14 @@ $(document).ready(function() {
     var questions = [];
     var category = '';
     var difficulty = '';
-   
-    var CATEGORIES = [
-         { key: 'any', value: 'any' },
-         { key: 9, value: 'General Knowledge' },
-         { key: 10, value: 'Entertain: Books' },
-         { key: 11, value: 'Entertain: Film' },
-         { key: 12, value: 'Entertain: Music' },
-         { key: 13, value: 'Entertain: Musicals & Theatre' },
-         { key: 14, value: 'Entertain: Television' },
-         { key: 15, value: 'Entertain: Video Games' },
-         { key: 16, value: 'Entertain: Board Games' },
-         { key: 17, value: 'Science & Nature' },
-         { key: 18, value: 'Science: Computers' },
-         { key: 19, value: 'Science: Mathematics' },
-         { key: 20, value: 'Mythology' },
-         { key: 21, value: 'Sports' },
-         { key: 22, value: 'Geography' },
-         { key: 23, value: 'History' },
-         { key: 24, value: 'Politics' },
-         { key: 25, value: 'Arts' },
-         { key: 26, value: 'Celeberties' },
-         { key: 27, value: 'Animals' },
-         { key: 28, value: 'Vehicals' },
-         { key: 30, value: 'Science Gadgets' }
-    ]
-
-    var LEVELS = [
-        { key: 'any', value: 'any' },
-        { key: 'easy', value: 'Easy' },
-        { key: 'medium', value: 'Medium' },
-        { key: 'hard', value: 'Hard' },
-    ]
 
     var quizContainer = document.getElementById('quiz');
     var resultContainer = document.getElementById('result');
 
     var loggedInUser = sessionStorage.getItem('LoggedInUser');
     loggedInUser = JSON.parse(loggedInUser);
-    $('h1').text(`Welcome ${loggedInUser.firstName} ${loggedInUser.lastName}`);
+
+    $('h1').text(`Logged In as ${loggedInUser.firstName} ${loggedInUser.lastName}`);
 
     $('#logout').click(function(e) {
         sessionStorage.removeItem('LoggedInUser');
@@ -52,6 +21,7 @@ $(document).ready(function() {
     function LoadQuiz() {
         questions = [];
         resultContainer.innerHTML = '';
+        document.getElementById('noquiz').innerHTML = '';
         $('#loader').show();
 
         var apiURL = 'https://opentdb.com/api.php?amount=10&type=multiple';
@@ -70,9 +40,17 @@ $(document).ready(function() {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-             var response = JSON.parse(this.response);
-             createQuiz(response.results);
-             bindAnswersEvent();
+                var response = JSON.parse(this.response);
+                if(response.results && response.results.length > 0) {
+                    createQuiz(response.results);
+                    bindAnswersEvent();
+                } else {
+                    console.log(questions);
+                    $('#loader').hide();
+                    $('#submitQuiz').hide();
+                    quizContainer.innerHTML = '';
+                    document.getElementById('noquiz').innerHTML = 'No quiz found! Choose another';
+                }
             }
         };
         xhttp.open("GET", apiURL, true);
@@ -178,7 +156,8 @@ $(document).ready(function() {
         users[index].grading.push({
             grade: total,
             category: category,
-            level: difficulty
+            level: difficulty,
+            submittedOn: new Date()
         })
 
         localStorage.setItem('Users', JSON.stringify(users));
