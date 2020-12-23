@@ -96,6 +96,8 @@ $(document).ready(function() {
                 // Redirect user to application's home page
                 location.href = './home.html';
             }            
+        } else {
+            $('.errorMessage').text('All fields are required. Enter valid data.');
         }
     })
 
@@ -154,6 +156,8 @@ $(document).ready(function() {
                 // Show error message if user is not found
                 $('.errorMessage').text('User not found or incorrect credentials');
             }
+        } else {
+            $('.errorMessage').text('All fields are required. Enter valid data.');
         }
     });
 
