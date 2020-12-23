@@ -11,7 +11,7 @@ $(document).ready(function() {
 
     // Focus on first input box on load of page
     $('#loginEmail').focus();
-    $('#fName');
+    $('#fName').focus();
 
     // Remove validation error class on click in inputs
     var inputArr = [
