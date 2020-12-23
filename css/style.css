@@ -31,7 +31,7 @@ h2 {
     color: #0d0d0d;
 }
 
-.container{
+.container {
     max-width: 80%;
     margin: auto;
     /*
@@ -43,11 +43,12 @@ h2 {
 */
 }
 
-.quizWrapper{
+.quizWrapper {
     padding: 60px;
     background-color: #fff;
-    border-radius: 10px;    
+    border-radius: 10px;
 }
+
 /* STRUCTURE */
 
 .wrapper {
@@ -361,12 +362,12 @@ input[type=text]:placeholder {
 
 .topnav a:hover {
     background-color: #E64A57;
-/*    color: black;*/
+    /*    color: black;*/
 }
 
 .topnav a.active {
     background-color: #4CAF50;
-/*    color: #0E2852;*/
+    /*    color: #0E2852;*/
 }
 
 .topnav-right {
@@ -394,10 +395,17 @@ input[type=text]:placeholder {
 }
 
 table {
-    width: 60%;
+    width: 80%;
+    border-collapse: collapse;
 }
 
 table thead {
+    text-align: left;
+}
+
+th,
+td {
+    padding: 15px;
     text-align: left;
 }
 
