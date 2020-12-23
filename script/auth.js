@@ -96,9 +96,7 @@ $(document).ready(function() {
                 // Redirect user to application's home page
                 location.href = './home.html';
             }            
-        }else{
-			$('.errorMessage').text('Please fill correct details');
-		}
+        }
     })
 
     // Login form's submit event
